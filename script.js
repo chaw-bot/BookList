@@ -36,6 +36,15 @@ function addBook(e) {
 
   // Append li to ul
   list.appendChild(li);
+  
+  library.push(book);
+
+  // local storage
+  let bookDetails = JSON.stringify(library);
+  localStorage.setItem('Library', bookDetails);
+
+  JSON.parse(localStorage.getItem('Library'));
+
 
   e.preventDefault();
 }
