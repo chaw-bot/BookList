@@ -34,3 +34,19 @@ function add() {
   // Append li to ul
   list.appendChild(li);
 }
+
+// add book
+function addBook(e) {
+  add();
+  
+  library.push(book);
+
+  // local storage
+  let bookDetails = JSON.stringify(library);
+  localStorage.setItem('Library', bookDetails);
+
+  // clear input
+  title.value = '';
+  author.value = '';
+  e.preventDefault();
+}
