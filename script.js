@@ -50,3 +50,12 @@ function addBook(e) {
   author.value = '';
   e.preventDefault();
 }
+
+// remove book
+function removeBook(e) {
+  if(e.target.parentElement.classList.contains('removeBtn')) {
+    e.target.parentElement.parentElement.remove();
+  }
+
+  e.preventDefault();
+}
