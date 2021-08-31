@@ -7,6 +7,11 @@ const list = document.querySelector('.list'),
 // library
 let library = [];
 
+// Create remove button
+const btn = document.createElement('a');
+btn.className = 'removeBtn';
+btn.innerHTML = '<input type="submit" value="remove" class="remove">';
+
 allEventListeners();
 
 // event listener
@@ -15,11 +20,6 @@ function allEventListeners() {
   addBtn.addEventListener('click', addBook);
   btn.addEventListener('click', removeBook);
 }
-
-// Create remove button
-const btn = document.createElement('a');
-btn.className = 'removeBtn';
-btn.innerHTML = '<input type="submit" value="remove" class="remove">';
 
 function showBooks() {
   if(localStorage.getItem('Library') === null) {
@@ -56,7 +56,6 @@ function add() {
 // add book
 function addBook(e) {
   add();
-  
   library.push(book);
 
   // local storage
