@@ -12,6 +12,15 @@ const btn = document.createElement('a');
 btn.className = 'removeBtn';
 btn.innerHTML = '<input type="submit" value="remove" class="remove">';
 
+function showBooks() {
+  if(localStorage.getItem('Library') === null) {
+    library;
+  } else {
+    library = JSON.parse(localStorage.getItem('Library'));
+  }
+
+  library.forEach(add());
+}
 
 // some function
 function add() {
