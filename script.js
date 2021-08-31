@@ -7,8 +7,14 @@ const list = document.querySelector('.list'),
 // library
 let library = [];
 
-// add book
-function addBook(e) {
+// Create remove button
+const btn = document.createElement('a');
+btn.className = 'removeBtn';
+btn.innerHTML = '<input type="submit" value="remove" class="remove">';
+
+
+// some function
+function add() {
   // book details
   book = {
     title: title.value,
@@ -22,32 +28,9 @@ function addBook(e) {
   // get values
   li.innerHTML = `&nbsp;"${book.title}"&nbsp;by&nbsp;&nbsp;${book.author}&nbsp;&nbsp;`;
 
-  // Create new link element
-  const btn = document.createElement('a');
-
-  // Add class
-  btn.className = 'remove';
-
-  // Add button
-  btn.innerHTML = '<input type="submit" value="remove" class="remove">';
-
   // Append linkt to li
   li.appendChild(btn);
 
   // Append li to ul
   list.appendChild(li);
-  
-  library.push(book);
-
-  // local storage
-  let bookDetails = JSON.stringify(library);
-  localStorage.setItem('Library', bookDetails);
-
-  JSON.parse(localStorage.getItem('Library'));
-
-
-  e.preventDefault();
 }
-
-// event listener
-addBtn.addEventListener('click', addBook);
