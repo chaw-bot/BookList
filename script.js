@@ -7,6 +7,15 @@ const list = document.querySelector('.list'),
 // library
 let library = [];
 
+allEventListeners();
+
+// event listener
+function allEventListeners() {
+  document.addEventListener('DOMContentLoaded', showBooks);
+  addBtn.addEventListener('click', addBook);
+  btn.addEventListener('click', removeBook);
+}
+
 // Create remove button
 const btn = document.createElement('a');
 btn.className = 'removeBtn';
